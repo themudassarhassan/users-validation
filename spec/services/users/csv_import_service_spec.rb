@@ -51,6 +51,13 @@ RSpec.describe Users::CSVImportService do
     end
   end
 
+  context 'when no csv file is provided' do
+    let(:csv_file) { nil }
+
+    specify do
+      expect(results).to be_empty
+    end
+  end
 
   context 'with invalid csv format' do
     let(:csv_content) { "name,password\n\"John\" Doe, pass,word" }

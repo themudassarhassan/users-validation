@@ -24,6 +24,8 @@ class Users::CSVImportService
   private
 
   def parse_csv
+    return [] if @csv.nil?
+
     CSV.parse(@csv.read, headers: true)
   end
 
