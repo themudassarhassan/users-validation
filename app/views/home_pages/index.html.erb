@@ -5,9 +5,8 @@
 </h1>
 
 <div class="mt-5">
-  <%= form_with url: home_page_path do |form| %>
+  <%= form_with url: home_page_path, data: { controller: "form", action: "change->form#submit"} do |form| %>
     <%= form.file_field :users_csv, required: true %>
-    <%= form.submit "Upload", class: "bg-blue-950 text-white px-3 py-1 rounded-md cursor-pointer" %>
   <% end %>
 </div>
 
