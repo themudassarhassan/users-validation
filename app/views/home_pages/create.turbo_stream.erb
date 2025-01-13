@@ -1,0 +1,21 @@
+<%= turbo_stream.update "results" do %>
+  <div id="results">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Password</th>
+        <th>Result</th>
+        <th>Message</th>
+      </tr>
+      <% @result.each do |result|%>
+        <tr>
+          <td><%= result.row_data[:name] %></td>
+          <td><%= result.row_data[:password] %></td>
+          <td><%= result.status %></td>
+          <td><%= result.message %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+
